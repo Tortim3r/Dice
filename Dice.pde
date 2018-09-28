@@ -5,10 +5,15 @@ void setup()
 }
 void draw()
 {
-	Die cuphead = new Die(10,10);
+	background(200);
+	for(int i = 10;i<700; i+=60){
+		for(int o = 10;o<800; i o+= 60){
+			Die cuphead = new Die(o,i);
+			cuphead.show();
+			cuphead.roll();
+		}
+	}
 	
-	cuphead.show();
-	cuphead.roll();
 }
 void mousePressed()
 {
