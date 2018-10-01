@@ -3,17 +3,21 @@ void setup()
 	size(800,800);
 	noLoop();
 }
+int rollCount = 0;
 void draw()
 {
 	background(200);
-	for(int i = 10;i<700; i+=60){
-		for(int o = 10;o<800; i o+= 60){
+	for(int i = 0;i<700; i+=100){
+		for(int o = 0;o<800; o+= 100){
 			Die cuphead = new Die(o,i);
 			cuphead.show();
 			cuphead.roll();
+			
+			
 		}
 	}
-	
+	textSize(50);
+	text("total roll: "+ rollCount,250,750);
 }
 void mousePressed()
 {
@@ -27,14 +31,12 @@ class Die //models one single dice cube
 	{
 		myX = x;
 		myY = y;
-
+		rollNum = ((int)(Math.random()*6)+1);
 	}
 	void roll()
 	{
-		rollNum = ((int)(Math.random()*6)+1);
-		fill(0);
-
 		
+		fill(0);
 		if(rollNum == 1)
 		{
 			ellipse(myX+50,myY+50,15,15);
@@ -79,7 +81,7 @@ class Die //models one single dice cube
 	{
 		fill(255);
 		rect(myX,myY,100,100,15);
-		
+		rollCount = rollCount + rollNum;
 	}
 		
 }
