@@ -21,7 +21,9 @@ void draw()
 }
 void mousePressed()
 {
+	rollCount = 0;
 	redraw();
+
 }
 class Die //models one single dice cube
 {
